@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+    provider = "prisma-erd-generator"
+    theme="default"
+    output = "erd.png"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Coinoscope {
+    key String @id @unique
+    remainingQueryCount Int
+    fecha DateTime @default (now())
+    nombreOriginal String
+    calendarDate String
+    items Item[]
+    localization Localization?
+}
+
+model Localization {
+    top Float
+    left Float
+    bottom Float
+    right Float
+
+    coinoscope Coinoscope @relation(fields:[coinoscopeId],references:[key])
+    coinoscopeId String
+
+    @@id([coinoscopeId])
+}
+
+model Item {
+    id Int @id @default(autoincrement())
+    imagePathKey String?
+    nominal String?
+    currencyName String?
+    openInBrowser Boolean?
+    pageUrl String?
+    year String?
+    page String?
+    countryName String?
+    yearInterval String?
+    canEstimateValue Boolean?
+    title String?
+
+    coinoscope Coinoscope @relation(fields:[coinoscopeId],references:[key])
+    coinoscopeId String
+
+}
