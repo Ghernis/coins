@@ -22,7 +22,7 @@ const LinkCard=(props:any)=>{
             {
             links.map((l:any)=>{
                 return (
-                    <div key={l.id} className='bg-blue-200 rounded-xl' >
+                    <div key={l.id} className='bg-blue-200 rounded-xl items-center' >
                         <div className='font-bold text-xl text-black'>{l.title}</div>
                         <div className='flex'>
                             {
@@ -35,6 +35,8 @@ const LinkCard=(props:any)=>{
                                 )
                             })
                         }
+                        <button className='rounded-lg py-2 px-4 bg-green-700'>Save</button>
+                        <input className='rounded' placeholder='Anio'/>
                         </div>
                         <a href={l.pageUrl} className='text-xl font-medium text-black'>{l.page}</a>
                     </div>

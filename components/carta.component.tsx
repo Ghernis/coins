@@ -6,12 +6,13 @@ const Carta =(props:any)=>{
     console.log(registro)
     return (
         <>
-            <div className='p-6 max-w-lg mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4'>
+            <div className='p-6 max-w-3xl mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4'>
                 <div className='shrink-0'>
                     <Image
+                        alt='Imagen'
                         src={`/originales/${registro.nombreOriginal}.jpg`}
-                        width={200}
-                        height={200}
+                        width={400}
+                        height={400}
                         />
                 </div>
                 <div>
