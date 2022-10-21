@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const Home: NextPage = (props) => {
+const Home: NextPage<any> = (props) => {
     const {resp} = props
     return (
         <ComparaPage data={resp}/>
