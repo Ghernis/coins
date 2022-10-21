@@ -1,13 +1,29 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Carta from '../components/carta.component'
+import ComparaPage from '../components/compara-page.component'
+import { PrismaClient } from '@prisma/client';
 
-const Home: NextPage = () => {
-  return (
-  <Carta />
-  )
+const prisma = new PrismaClient();
+
+const Home: NextPage = (props) => {
+    const {resp} = props
+    return (
+        <ComparaPage data={resp}/>
+    )
+}
+
+export async function getServerSideProps(){
+    const r = await prisma.coinoscope.findMany({
+        select:{
+            key:true,
+            fecha:true,
+            nombreOriginal:true,
+            remainingQueryCount:true,
+            items:true,
+            localization:true
+        }
+    })
+    const resp=JSON.parse(JSON.stringify(r))
+    return {props:{resp}}
 }
 
 export default Home
