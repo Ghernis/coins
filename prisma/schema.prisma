@@ -5,11 +5,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
-generator erd {
-    provider = "prisma-erd-generator"
-    theme="default"
-    output = "erd.png"
-}
+//generator erd {
+//    provider = "prisma-erd-generator"
+//    theme="default"
+//    output = "erd.png"
+//}
 
 datasource db {
   provider = "sqlite"
