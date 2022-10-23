@@ -4,7 +4,7 @@ import { trpc } from '../utils/trpc'
 
 const ComparaPage= (props:any)=>{
     const {data} =  props.data
-    const [item,setItem] = useState(0)
+    const [item,setItem] = useState(15)
     const coin = trpc.getCoin.useQuery({key:data[item].key})
     const changeItem=(val:number)=>{
         if (item==0 && val < 0) {
