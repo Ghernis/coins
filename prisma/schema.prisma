@@ -12,7 +12,7 @@ generator client {
 //}
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgres"
   url      = env("DATABASE_URL")
 }
 
@@ -21,7 +21,7 @@ model Coinoscope {
     remainingQueryCount Int
     fecha DateTime @default (now())
     nombreOriginal String
-    calendarDate String
+    calendarDate String?
     items Item[]
     localization Localization?
 }
@@ -42,6 +42,7 @@ model Item {
     id Int @id @default(autoincrement())
     imagePathKey String?
     nominal String?
+    isCorrecto Boolean @default(false)
     currencyName String?
     openInBrowser Boolean?
     pageUrl String?

@@ -39,6 +39,40 @@ export default async function handler(
             res.status(200).json(resp)
             break;
         }
+        case 'createAll':{
+            data.forEach(async(d:any)=>{
+                if(d.localization!=null){
+                    const resp=await prisma.coinoscope.create({
+                            data:{
+                                key:d.key,
+                                remainingQueryCount:d.remainingQueryCount,
+                                nombreOriginal:d.nombreOriginal,
+                                calendarDate:d.calendarDate,
+                                localization:{
+                                    create:d.localization
+                                },
+                                items:{
+                                    create:d.items
+                                }
+                        }
+                    })
+                }
+                else{
+                //    const resp=await prisma.coinoscope.create({
+                //            data:{
+                //                key:d.key,
+                //                remainingQueryCount:d.remainingQueryCount,
+                //                nombreOriginal:d.nombreOriginal,
+                //                calendarDate:d.calendarDate,
+                //                items:{
+                //                    create:d.items
+                //                }
+                //        }
+                //    })
+                }
+            })
+            break;
+        }
         case 'get':{
             if(param.length==2){
                 const resp = await prisma.coinoscope.findMany({
