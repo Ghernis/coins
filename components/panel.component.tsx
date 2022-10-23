@@ -13,12 +13,12 @@ const Panel =(props:any)=>{
                         width={400}
                         height={400}
                         />
-                    <Image
+                    {/*<Image
                         alt='Imagen'
                         src={`/originales/${registro?.nombreOriginal.replace("A","B")}.jpg`}
                         width={400}
                         height={400}
-                        />
+                        />*/}
                 </div>
                 <div>
                     <>

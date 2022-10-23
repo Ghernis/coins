@@ -8,7 +8,7 @@ const LinkCard=(props:any)=>{
     links = links.sort(sortC)
     const update = trpc.updateCoin.useMutation({
         onSuccess(input){
-            utils.coins.invalidate();
+            utils.getCoin.invalidate({key:links[0].coinoscopeId});
         }
     });
     const utils = trpc.useContext();

@@ -19,6 +19,38 @@ export  const  appRouter =  router({
             })
         return data
     }),
+    getIds: publicProcedure
+    .query(async()=>{
+        const ids = await prisma.coinoscope.findMany({
+            select:{
+                key:true
+            }
+        })
+        return ids
+    }),
+    getCoin: publicProcedure
+    .input(
+        z.object({
+            key:z.string()
+        })
+    )
+    .query(async({input})=>{
+        const coin = await prisma.coinoscope.findFirst({
+            where:{
+                key:input.key
+            },
+            select:{
+                key:true,
+                fecha:true,
+                nombreOriginal:true,
+                remainingQueryCount:true,
+                items:true,
+                localization:true
+            }
+        })
+        return coin
+
+    }),
     updateCoin: publicProcedure
     .input(
         z.object({

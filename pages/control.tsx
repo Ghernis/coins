@@ -4,13 +4,14 @@ import { trpc } from '../utils/trpc'
 
 
 const ControlCoins: NextPage<any> = () => {
-    const coins=  trpc.coins.useQuery();
+    //const coins=  trpc.coins.useQuery();
+    const coinsAll = trpc.getIds.useQuery();
     return (
         <>
             {
-            coins.isLoading
+            coinsAll.isLoading
                 ? <div>Cargando...</div>
-                : <ComparaPage data={coins}/>
+                : <ComparaPage data={coinsAll}/>
             }
         </>
     )
