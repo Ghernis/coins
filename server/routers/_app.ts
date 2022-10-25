@@ -1,6 +1,7 @@
 import {z} from 'zod';
 import { publicProcedure, router} from '../trpc';
 import { PrismaClient } from '@prisma/client';
+import { info } from 'console';
 
 const prisma = new PrismaClient();
 
@@ -18,6 +19,24 @@ export  const  appRouter =  router({
                 }
             })
         return data
+    }),
+    getCorrectasKeys: publicProcedure
+    .query(async()=>{
+        const correctas = await prisma.coinoscope.findMany({
+            where:{
+               items:{
+                    some:{
+                        isCorrecto:true
+                    }
+                }
+            },
+            select:{
+                key:true,
+                items:true
+
+            }
+        })
+        return correctas
     }),
     getIds: publicProcedure
     .query(async()=>{
