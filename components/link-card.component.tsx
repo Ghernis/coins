@@ -1,4 +1,5 @@
 import { trpc } from '../utils/trpc';
+import {cva} from 'cva';
 
 const LinkCard=(props:any)=>{
     let {links} = props
