@@ -1,5 +1,9 @@
 import React  from 'react';
+import {CardInfo,cardInterface} from '../card-info'
 import {cva,VariantProps} from 'cva';
+
+
+
 
 const cardStyles = cva(
     'grid rounded-md justifi-around items-center max-w-prose drop-shadow-lg',
@@ -17,20 +21,13 @@ const cardStyles = cva(
     }
 )
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof cardStyles> {}
+export type types =  cardInterface & VariantProps<typeof cardStyles>;
 
-export const Card: React.FC<CardProps> = ({
+export const Card: React.FC<types> = ({
     intent,
     ...props
 })=>{
-    const {} = props
 return (
-        <div className={cardStyles({intent})} {...props}>
-            <div className='items-center'>Titulo</div>
-           {/* <p>Valor: {valor} {moneda}</p>
-            <p>Anio: {anio}</p>
-            <p>Pais: {pais}</p>
-            <p>correcto</p>*/}
-        </div>
+        <CardInfo intent={cardStyles({intent})} {...props} />
     )
 }

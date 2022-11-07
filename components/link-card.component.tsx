@@ -38,8 +38,10 @@ const LinkCard=(props:any)=>{
         <div>
             {
             links?.map((l:any)=>{
+                const styleCorrecto='bg-gradient-to-r from-green-500 to-cyan-500/50 border border-green-700'
+                const styleIncorrecto='bg-gradient-to-r from-pink-500 to-yellow-500/50 border border-pink-700'
                 return (
-                    <div key={l.id} className={'rounded-xl items-center '+ (l.isCorrecto ? 'bg-green-200' : 'bg-blue-100')} >
+                    <div key={l.id} className={'rounded-xl items-center '+ (l.isCorrecto ? styleCorrecto : styleIncorrecto)} >
                         <div className='font-bold text-xl text-black'>{l.title}</div>
                         <div className='flex'>
                             {

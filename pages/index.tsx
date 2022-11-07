@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 import {trpc} from '../utils/trpc'
-import { Card } from '@ui/CardInfo'
 
+import {PanelCarta} from '@ui/PanelCarta'
+import {Texto} from '@ui/Texto'
+import CardInfo from '../components/card-info';
 
 const Home: NextPage<any> = () => {
     const correctas =trpc.getCorrectasKeys.useQuery();
@@ -22,8 +24,15 @@ const Home: NextPage<any> = () => {
     return (
         <>
             <div>home</div>
-            <Card intent={false} />
-            </>
+            <CardInfo
+                fondo='warning'
+                size='prose'
+                titulo='Moneda 10 peso'
+                descr='esta es una descripcion de la moneda'
+             />
+
+        </>
+
     )
 }
 

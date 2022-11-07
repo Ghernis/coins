@@ -1,26 +1,37 @@
 import { ComponentStory,ComponentMeta } from '@storybook/react';
-import {Card} from '../components/ui/CardInfo';
+import CardInfo from '../components/card-info';
 
 export default {
     title: 'UI/CardInfo',
-    component: Card,
+    component: CardInfo,
     argTypes:{
-        intent:{
-            type: 'boolean'
-        },
+        size:{
+            options:['sm','md','lg','prose']
+        }
     }
-}as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
+}as ComponentMeta<typeof CardInfo>;
 
-export const True = Template.bind({moneda:'$', valor:30,pais:'spain',anio:1988});
+const Template: ComponentStory<typeof CardInfo> = (args) => <CardInfo {...args} />;
 
-True.args={
-    intent:true,
+export const Primary = Template.bind({});
+
+Primary.args={
+    fondo:'primary',
+    titulo:'Titulo ejemplo',
+    descr:'Descripcion ejemlo',
+    size:{
+        values:['sm','md','lg','prose']
+    }
 }
 
-export const False = Template.bind({});
+export const Warning = Template.bind({});
 
-False.args={
-    intent:false,
+Warning.args={
+    fondo:'warning',
+    titulo:'Titulo ejemplo',
+    descr:'Descripcion ejemlo',
+    size:{
+        values:['sm','md','lg','prose']
+    }
 }
