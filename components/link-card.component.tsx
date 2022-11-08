@@ -1,4 +1,5 @@
 import { trpc } from '../utils/trpc';
+import CardInfo from './card-info';
 import {cva} from 'cva';
 
 const LinkCard=(props:any)=>{
@@ -35,8 +36,22 @@ const LinkCard=(props:any)=>{
         update.mutate( {id:l.id,isCorrecto:val})
     }
     return (
-        <div>
+        <div className='grid grid-col-2 gap-6'>
             {
+
+            links.map((l:any)=>{
+                <CardInfo
+                    isCorrecto={l.isCorrecto}
+                    titulo={l.title}
+                    size='md'
+                    pais={l.countryName}
+                    valor={l.nominal}
+                    moneda={l.currencyName}
+                    anio={l.yearInterval}
+                    />
+            })
+            
+            /*
             links?.map((l:any)=>{
                 const styleCorrecto='bg-gradient-to-r from-green-500 to-cyan-500/50 border border-green-700'
                 const styleIncorrecto='bg-gradient-to-r from-pink-500 to-yellow-500/50 border border-pink-700'
@@ -68,7 +83,7 @@ const LinkCard=(props:any)=>{
                     </div>
                 )
             })
-        }
+        */}
         </div>
     )
 }

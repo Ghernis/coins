@@ -1,5 +1,5 @@
 import React  from 'react';
-import {CardInfo,cardInterface} from '../card-info'
+import CardInfo from '../card-info'
 import {cva,VariantProps} from 'cva';
 
 
@@ -21,7 +21,7 @@ const cardStyles = cva(
     }
 )
 
-export type types =  cardInterface & VariantProps<typeof cardStyles>;
+export type types = VariantProps<typeof cardStyles>;
 
 export const Card: React.FC<types> = ({
     intent,

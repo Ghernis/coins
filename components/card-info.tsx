@@ -1,18 +1,35 @@
+import {useState} from 'react'
 import {PanelCarta} from '@ui/PanelCarta'
 //import {PanelCarta} from '../components/ui/PanelCarta'
 import {Texto} from '@ui/Texto'
 //import {Texto} from '../components/ui/Texto'
 
 const CardInfo=(props:any)=>{
-    const {fondo,titulo,size,descr} = props
+    const {isCorrecto,titulo,size,pais,valor,moneda,anio} = props
+    const [correcto, setCorrecto] = useState(isCorrecto)
+    const togle=(val:boolean)=>{
+        const nVal = val ? false : true
+        setCorrecto(nVal)
+    }
     return (
-    <PanelCarta fondo={fondo} size={size}>
-            <div className='grid-2 h-full w-full items-center rounded-md justify-center bg-gray-800 back'>
+    <PanelCarta fondo={correcto ? 'primary' : 'warning'} size={size}>
+            <div className='grid-2 h-full w-full items-center rounded-md justify-center bg-gray-800'>
                 <Texto intent='titulo'>{titulo}</Texto>
-                <div className=''>
-                    <Texto intent='p'>{descr}</Texto>
-                    <Texto intent='p'>{descr}</Texto>
+                <div className='grid grid-cols-2 place-items-center place-content-center'>
+                    <Texto intent='p' color='warning'>Pais</Texto>
+                    <Texto intent='p'>{pais}</Texto>
+                    <Texto intent='p' color='warning'>Valor</Texto>
+                    <Texto intent='p'>{valor} {moneda}</Texto>
+                    <Texto intent='p' color='warning'>Anio</Texto>
+                    <Texto intent='p'>{anio}</Texto>
                 </div>
+                            <label className="relative flex justify-between items-center p-2 text-xl text-blue-300">
+                                {
+                                correcto ? 'Correcto' : 'Incorrecto'
+                                }
+                                <input onClick={()=>togle(correcto)} defaultChecked={correcto} type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
+                                <span className="w-12 h-6 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-300 rounded-full duration-300 ease-in-out peer-checked:bg-green-400 after:w-6 after:h-6 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-4"></span>
+                            </label>
 
             </div>
     </PanelCarta>

@@ -4,8 +4,8 @@ const panelStyles = cva('rounded-md border-solid p-1',
     {
         variants:{
             fondo:{
-                primary:'bg-gradient-to-r from-green-400 via-sky-400 to-teal-500 shadow-md shadow-green-500/50',
-                warning:'bg-gradient-to-r from-red-500  via-pink-300 to-purple-300 shadow-md shadow-red-500/50'
+                primary:'bg-gradient-to-r from-sky-400 via-green-600 to-teal-500 shadow-md shadow-green-500/50',
+                warning:'bg-gradient-to-r from-pink-300  via-red-500 to-purple-400 shadow-md shadow-red-500/50'
             },
             size:{
                 sm:'max-w-sm',

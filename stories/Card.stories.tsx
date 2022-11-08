@@ -17,19 +17,21 @@ const Template: ComponentStory<typeof CardInfo> = (args) => <CardInfo {...args} 
 export const Primary = Template.bind({});
 
 Primary.args={
-    fondo:'primary',
-    titulo:'Titulo ejemplo',
-    descr:'Descripcion ejemlo',
-    size:{
-        values:['sm','md','lg','prose']
-    }
+    isCorrecto:true,
+    titulo:'Poland, 2 Zlote 2008, 1994-2017 Issue - 2 ZÅote',
+    pais:'Poland',
+    size:'md',
+    valor:'5',
+    moneda:'$',
+    anio:'1988'
+    
 }
 
 export const Warning = Template.bind({});
 
 Warning.args={
     fondo:'warning',
-    titulo:'Titulo ejemplo',
+    titulo:'Poland, 2 Zlote 2008, 1994-2017 Issue - 2 ZÅote',
     descr:'Descripcion ejemlo',
     size:{
         values:['sm','md','lg','prose']

@@ -17,19 +17,76 @@ const Home: NextPage<any> = () => {
 "coin-database.com",
 "ucoin.net",
 "coinscatalog.net",
-"usmint.gov"
+"uproseint.gov"
 ]
 */
     //6.25 asiertos por moneda
     return (
         <>
             <div>home</div>
+            <div className='grid grid-cols-3 p-3 gap-3'>
+                <div className='grid-col-1 row-span-5'></div>
+            <CardInfo
+                fondo='primary'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+            <CardInfo
+                fondo='primary'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
             <CardInfo
                 fondo='warning'
                 size='prose'
-                titulo='Moneda 10 peso'
+                titulo='Moneda 10 dolar'
                 descr='esta es una descripcion de la moneda'
              />
+            <CardInfo
+                fondo='warning'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+            <CardInfo
+                fondo='primary'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+            <CardInfo
+                fondo='primary'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+            <CardInfo
+                fondo='warning'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+            <CardInfo
+                fondo='warning'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+            <CardInfo
+                fondo='warning'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+            <CardInfo
+                fondo='warning'
+                size='prose'
+                titulo='Moneda 10 dolar'
+                descr='esta es una descripcion de la moneda'
+             />
+             </div>
 
         </>
 
