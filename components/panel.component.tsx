@@ -23,12 +23,12 @@ const Panel =(props:any)=>{
                         />*/}
                 </div>
                 <div>
-                    <div className='grid grid-col-2'>
+                    <div className='grid grid-cols-1 gap-3'>
                         {
                                 registro.items.map((l:any)=>{
                             return (
                             <CardInfo   
-                                    key={l.key}
+                                    key={l.id}
                                 isCorrecto={l.isCorrecto}
                                 titulo={l.title}
                                 size='md'

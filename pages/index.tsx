@@ -27,64 +27,40 @@ const Home: NextPage<any> = () => {
             <div className='grid grid-cols-3 p-3 gap-3'>
                 <div className='grid-col-1 row-span-5'></div>
             <CardInfo
-                fondo='primary'
+                isCorrecto={true}
                 size='prose'
                 titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
+                pais='Spain'
+                valor={3}
+                moneda='$'
+                anio={1988}
              />
             <CardInfo
-                fondo='primary'
+                isCorrecto={false}
                 size='prose'
                 titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
+                pais='Spain'
+                valor={3}
+                moneda='$'
+                anio={1988}
              />
             <CardInfo
-                fondo='warning'
+                isCorrecto={true}
                 size='prose'
                 titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
+                pais='Spain'
+                valor={3}
+                moneda='$'
+                anio={1988}
              />
             <CardInfo
-                fondo='warning'
+                isCorrecto={false}
                 size='prose'
                 titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
-             />
-            <CardInfo
-                fondo='primary'
-                size='prose'
-                titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
-             />
-            <CardInfo
-                fondo='primary'
-                size='prose'
-                titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
-             />
-            <CardInfo
-                fondo='warning'
-                size='prose'
-                titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
-             />
-            <CardInfo
-                fondo='warning'
-                size='prose'
-                titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
-             />
-            <CardInfo
-                fondo='warning'
-                size='prose'
-                titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
-             />
-            <CardInfo
-                fondo='warning'
-                size='prose'
-                titulo='Moneda 10 dolar'
-                descr='esta es una descripcion de la moneda'
+                pais='Spain'
+                valor={3}
+                moneda='$'
+                anio={1988}
              />
              </div>
 

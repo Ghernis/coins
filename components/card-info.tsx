@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {PanelCarta} from '@ui/PanelCarta'
 //import {PanelCarta} from '../components/ui/PanelCarta'
 import {Texto} from '@ui/Texto'
+import {PanelText} from '@ui/PanelTexto'
 //import {Texto} from '../components/ui/Texto'
 
 const CardInfo=(props:any)=>{
@@ -13,14 +14,15 @@ const CardInfo=(props:any)=>{
     }
     return (
     <PanelCarta fondo={correcto ? 'primary' : 'warning'} size={size}>
-            <div className='grid-2 h-full w-full items-center rounded-md justify-center bg-gray-800'>
+            <PanelText fondo={correcto ? 'primary' : 'warning'}>
                 <Texto intent='titulo'>{titulo}</Texto>
-                <div className='grid grid-cols-2 place-items-center place-content-center'>
-                    <Texto intent='p' color='warning'>Pais</Texto>
+                {/*<div className='grid grid-cols-2 place-items-center place-content-center'>*/}
+                <div className='flex flex-col'>
+                    <Texto intent='p' colorText={correcto ? 'primary' : 'danger'}>Pais</Texto>
                     <Texto intent='p'>{pais}</Texto>
-                    <Texto intent='p' color='warning'>Valor</Texto>
+                    <Texto intent='p' colorText='warning'>Valor</Texto>
                     <Texto intent='p'>{valor} {moneda}</Texto>
-                    <Texto intent='p' color='warning'>Anio</Texto>
+                    <Texto intent='p' colorText='warning'>Anio</Texto>
                     <Texto intent='p'>{anio}</Texto>
                 </div>
                             <label className="relative flex justify-between items-center p-2 text-xl text-blue-300">
@@ -31,7 +33,7 @@ const CardInfo=(props:any)=>{
                                 <span className="w-12 h-6 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-300 rounded-full duration-300 ease-in-out peer-checked:bg-green-400 after:w-6 after:h-6 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-4"></span>
                             </label>
 
-            </div>
+            </PanelText>
     </PanelCarta>
 
     )
