@@ -1,14 +1,10 @@
-import { w, W } from 'windstitch';
+import {cva,VariantProps} from 'cva';
 
-export const Button = w.button(
-  `
-  hover:shadow-outline text-center
-  font-medium focus:outline-none
-  focus:ring-4 ring-opacity-30
-`,
+const buttonStyles = cva(
+  '',
   {
     variants: {
-      color: {
+      colorBG: {
         gray: `
           bg-gray-300
           hover:bg-gray-400
@@ -39,7 +35,17 @@ export const Button = w.button(
     },
     defaultVariants: {
       size: 'base',
+      colorBG:'violet'
     },
   }
 );
-export type ButtonProps = W.Infer<typeof Button>
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonStyles>{}
+
+export const Button: React.FC<ButtonProps> =({
+    className,
+    colorBG,
+    size,
+    ...props
+})=>(
+<button className={buttonStyles({colorBG,size,class:className})} {...props}></button>
+);

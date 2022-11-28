@@ -3,14 +3,16 @@ import {PanelCarta} from '@ui/PanelCarta'
 //import {PanelCarta} from '../components/ui/PanelCarta'
 import {Texto} from '@ui/Texto'
 import {PanelText} from '@ui/PanelTexto'
+import {Button} from '@ui/Button'
 //import {Texto} from '../components/ui/Texto'
 
 const CardInfo=(props:any)=>{
-    const {isCorrecto,titulo,size,pais,valor,moneda,anio} = props
+    const {isCorrecto,titulo,size,pais,valor,moneda,anio,pageUrl,page,change} = props
     const [correcto, setCorrecto] = useState(isCorrecto)
     const togle=(val:boolean)=>{
         const nVal = val ? false : true
         setCorrecto(nVal)
+        change()
     }
     return (
     <PanelCarta fondo={correcto ? 'primary' : 'warning'} size={size}>
@@ -24,6 +26,9 @@ const CardInfo=(props:any)=>{
                     <Texto intent='p'>{valor} {moneda}</Texto>
                     <Texto intent='p' colorText='warning'>Anio</Texto>
                     <Texto intent='p'>{anio}</Texto>
+                    <div>
+                    <Button><a href={pageUrl}>{page}</a></Button>
+                    </div>
                 </div>
                             <label className="relative flex justify-between items-center p-2 text-xl text-blue-300">
                                 {
